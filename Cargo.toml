@@ -1,0 +1,21 @@
+[package]
+name = "traffic-by-ip-exporter"
+version = "0.1.0"
+authors = ["Luis Felipe Domínguez Vega <ldominguezvega@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+pcap = "0.7.0"
+prometheus_exporter_base = "0.4.0"
+pnet = "0.22.0"
+env_logger = "0.6.2"
+log = "0.4.8"
+clap = "2.33.0"
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
+lto = true
+panic = 'abort'
